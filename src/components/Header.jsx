@@ -1,4 +1,5 @@
 import logoImg from '../assets/logo.jpg';
+import Button from './UI/Button.jsx';
 
 export default function Header() {
   return (
@@ -8,9 +9,9 @@ export default function Header() {
         <h1>ReactBurgers</h1>
       </div>
       <nav>
-        <button>
+        <Button textOnly>
           Cart (0)
-        </button>
+        </Button>
       </nav>
     </header>
   )
