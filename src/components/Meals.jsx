@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
+import MealItem from './MealItem.jsx';
 
 export default function Meals() {
   const [meals, setMeals] = useState([]);
 
   useEffect(() => {
     async function fetchMeals() {
-      const result = await fetch('http://localhost:2000/meals');
-      const data = await result.json();
+      const response = await fetch('http://localhost:2000/meals');
+      const data = await response.json();
+
+      if (!response.ok) {
+        //...
+      }
       setMeals(data);
     }
 
@@ -16,7 +21,7 @@ export default function Meals() {
   return (
     <ul id='meals'>
       {meals.map(meal => 
-        <li key={meal.id} className='meal-item'>{meal.name}</li>
+          <MealItem key={meal.id} meal={meal}/>
       )}
     </ul>
   )
