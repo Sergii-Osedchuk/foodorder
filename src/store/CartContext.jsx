@@ -45,7 +45,7 @@ function cartReducer(state, action) {
         quantity: existingCartItem.quantity - 1,
       }
 
-      updatedItems[existingCartItem] = updatedItem;
+      updatedItems[existingCartItemIndex] = updatedItem;
     }
 
     return {...state, items: updatedItems};
@@ -72,9 +72,11 @@ export function CartContextProvider({children}) {
     removeItem,
   }
 
-  console.log(cartContext)
+  console.log(cartContext);
 
-  return <CartContext.Provider value = {cartContext}>{children}</CartContext.Provider>
+  return (
+    <CartContext.Provider value = {cartContext}>{children}</CartContext.Provider>
+  );
 }
 
 export default CartContext;

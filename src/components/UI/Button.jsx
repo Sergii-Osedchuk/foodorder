@@ -1,4 +1,4 @@
-export default function Button({children, textOnly, onClick, className, ...props}) {
+export default function Button({children, textOnly, className, ...props}) {
   let cssClass = textOnly ? 'text-button' : 'button';
   cssClass += ' ' + {className};
   return (
