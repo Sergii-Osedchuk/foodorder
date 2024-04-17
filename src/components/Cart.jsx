@@ -17,11 +17,11 @@ export default function Cart () {
     <Modal className = 'cart' open = {userProgressCtx.progress === 'cart'}>
       <h2>You Cart</h2>
       <ul>
-        {cartCtx.items.map(item => {
+        {cartCtx.items.map(item => 
           <li key = {item.id}>
             {item.name} - {item.quantity}
           </li>
-        })}
+        )}
       </ul>
       <p className = 'cart-total'>{currencyFormator.format(cartTotal)}</p>
       <p className = 'modal-actions'>
