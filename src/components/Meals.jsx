@@ -5,7 +5,7 @@ import Error from './Error.jsx';
 const requestConfig = {};
 
 export default function Meals() {
-  const { data: meals, isLoading, error } = useHttp('http://localhost:2000/meal', requestConfig);
+  const { data: meals, isLoading, error } = useHttp('http://localhost:2000/meals', requestConfig, []);
 
   if (isLoading) {
     return <p className='center'>Data is fetching ...</p>;
