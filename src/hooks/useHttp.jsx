@@ -17,7 +17,7 @@ export default function useHttp(url, config, initialValue) {
   const [error, setError] = useState();
 
   function clearData() {
-    setData([]);
+    setData(initialValue);
   }
 
   const sendRequest = useCallback(async function sendRequest(data) {
